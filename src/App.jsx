@@ -2,13 +2,14 @@ import { useState } from 'react'
 
 import Perfil from "./componemtes/Perfil"
 import ReposList from './componemtes/Perfil/reposLIst'
+import styles from './App.module.css'
 
 function App() {
   const [nomeUsuario, setNomeUsuario] = useState('');
 
   return(
     <>
-    <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
+    <input className={styles.input} type="text" placeholder='Digite o usuário' onBlur={(e) => setNomeUsuario(e.target.value)} />
     
     {nomeUsuario.length > 4 && (
       <>
